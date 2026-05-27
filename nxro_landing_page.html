@@ -1,0 +1,295 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.btn-primary{background:#1D9E75;color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:opacity .15s}
+.btn-primary:hover{opacity:.88}
+.btn-ghost{background:transparent;color:var(--color-text-primary);border:0.5px solid var(--color-border-secondary);padding:10px 22px;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s}
+.btn-ghost:hover{background:var(--color-background-secondary)}
+.badge{display:inline-flex;align-items:center;gap:6px;background:#E1F5EE;color:#0F6E56;font-size:12px;font-weight:500;padding:4px 12px;border-radius:20px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-primary);position:sticky;top:0;z-index:10}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:32px;height:32px;background:#1D9E75;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:.5px;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;color:var(--color-text-secondary);text-decoration:none;cursor:pointer}
+.nav-links a:hover{color:var(--color-text-primary)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.hero{padding:80px 40px 72px;text-align:center;max-width:740px;margin:0 auto}
+.hero h1{font-size:46px;font-weight:500;line-height:1.15;letter-spacing:-1.5px;color:var(--color-text-primary);margin:20px 0 18px}
+.hero h1 span{color:#1D9E75}
+.hero p{font-size:17px;color:var(--color-text-secondary);line-height:1.7;max-width:520px;margin:0 auto 32px}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.trust-bar{display:flex;align-items:center;justify-content:center;gap:32px;padding:20px 40px;border-top:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary);flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--color-text-secondary)}
+.trust-item i{font-size:16px;color:#1D9E75}
+.how-section{padding:72px 40px;max-width:900px;margin:0 auto}
+.section-label{font-size:12px;font-weight:500;color:#1D9E75;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.section-title{font-size:28px;font-weight:500;letter-spacing:-0.5px;color:var(--color-text-primary);margin-bottom:10px}
+.section-sub{font-size:15px;color:var(--color-text-secondary);margin-bottom:48px;max-width:480px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.step-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:24px}
+.step-num{width:32px;height:32px;background:#E1F5EE;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#0F6E56;margin-bottom:16px}
+.step-card h3{font-size:15px;font-weight:500;margin-bottom:8px;color:var(--color-text-primary)}
+.step-card p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.features-section{padding:72px 40px;background:var(--color-background-secondary);border-top:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary)}
+.features-inner{max-width:900px;margin:0 auto}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:48px}
+.feat{padding:22px 24px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px}
+.feat-icon{width:38px;height:38px;background:#E1F5EE;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.feat-icon i{font-size:18px;color:#0F6E56}
+.feat h3{font-size:14px;font-weight:500;margin-bottom:6px;color:var(--color-text-primary)}
+.feat p{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+.escrow-section{padding:72px 40px;max-width:900px;margin:0 auto}
+.escrow-flow{display:flex;align-items:center;gap:0;margin-top:48px;overflow-x:auto;padding-bottom:8px}
+.flow-step{flex:1;min-width:130px;text-align:center;padding:0 8px}
+.flow-circle{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.flow-circle i{font-size:22px}
+.flow-circle.active{background:#1D9E75}
+.flow-circle.active i{color:#fff}
+.flow-circle.muted{background:#E1F5EE}
+.flow-circle.muted i{color:#0F6E56}
+.flow-label{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.flow-sub{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+.flow-arrow{color:var(--color-border-secondary);font-size:20px;flex-shrink:0;margin-bottom:36px}
+.pricing-section{padding:72px 40px;background:var(--color-background-secondary);border-top:0.5px solid var(--color-border-tertiary)}
+.pricing-inner{max-width:900px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:48px}
+.price-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:14px;padding:26px}
+.price-card.featured{border:1.5px solid #1D9E75}
+.price-badge{display:inline-block;font-size:11px;font-weight:500;background:#E1F5EE;color:#0F6E56;padding:3px 10px;border-radius:20px;margin-bottom:14px}
+.price-card h3{font-size:15px;font-weight:500;margin-bottom:6px;color:var(--color-text-primary)}
+.price-card .amount{font-size:32px;font-weight:500;letter-spacing:-1px;color:var(--color-text-primary);margin:12px 0 4px}
+.price-card .amount span{font-size:14px;font-weight:400;color:var(--color-text-secondary)}
+.price-card .desc{font-size:12px;color:var(--color-text-secondary);margin-bottom:20px;line-height:1.5}
+.price-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.price-card ul li{font-size:13px;color:var(--color-text-secondary);display:flex;align-items:flex-start;gap:8px}
+.price-card ul li i{font-size:15px;color:#1D9E75;flex-shrink:0;margin-top:1px}
+.price-btn{width:100%;padding:10px 0;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-primary);transition:background .15s}
+.price-btn:hover{background:var(--color-background-secondary)}
+.price-btn.primary{background:#1D9E75;color:#fff;border:none}
+.price-btn.primary:hover{opacity:.88}
+.cta-section{padding:80px 40px;text-align:center;max-width:620px;margin:0 auto}
+.cta-section h2{font-size:32px;font-weight:500;letter-spacing:-0.8px;margin-bottom:14px;color:var(--color-text-primary)}
+.cta-section p{font-size:16px;color:var(--color-text-secondary);margin-bottom:32px;line-height:1.7}
+.footer{padding:28px 40px;border-top:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:space-between;flex-wrap:gap;gap:12px}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:13px;color:var(--color-text-secondary);text-decoration:none;cursor:pointer}
+.footer p{font-size:12px;color:var(--color-text-secondary)}
+</style>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="logo-mark">NX</div>
+    <span style="font-size:16px;font-weight:500;letter-spacing:-.3px;color:var(--color-text-primary)">NXRO</span>
+  </div>
+  <div class="nav-links">
+    <a>How it works</a>
+    <a>Features</a>
+    <a>Pricing</a>
+    <a>For businesses</a>
+  </div>
+  <div class="nav-actions">
+    <button class="btn-ghost">Sign in</button>
+    <button class="btn-primary">Get started</button>
+  </div>
+</nav>
+
+<section style="border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:72px">
+  <div class="hero">
+    <div class="badge"><i class="ti ti-shield-check" aria-hidden="true"></i> Secure escrow for everyone</div>
+    <h1>Trade anything.<br><span>Get paid safely.</span></h1>
+    <p>NXRO holds funds in secure escrow until both parties are satisfied — so buyers feel protected and sellers get paid on time, every time.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" style="padding:13px 32px;font-size:15px"><i class="ti ti-arrow-right" aria-hidden="true"></i> Start for free</button>
+      <button class="btn-ghost" style="padding:12px 24px;font-size:15px">See how it works</button>
+    </div>
+  </div>
+
+  <div style="max-width:720px;margin:0 auto 0;padding:0 40px">
+    <div style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:16px;padding:24px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:2px;text-transform:uppercase;letter-spacing:.7px">Active order</div>
+          <div style="font-size:15px;font-weight:500;color:var(--color-text-primary)">Brand Identity Design</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span style="background:#E1F5EE;color:#0F6E56;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px">In Progress</span>
+          <span style="background:#FAEEDA;color:#854F0B;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px">Escrow: Held</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:140px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:14px">
+          <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">Amount locked</div>
+          <div style="font-size:22px;font-weight:500;color:var(--color-text-primary)">$650</div>
+        </div>
+        <div style="flex:1;min-width:140px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:14px">
+          <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">Buyer</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#E1F5EE;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#0F6E56">AM</div>
+            <div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">Alex M.</div>
+          </div>
+        </div>
+        <div style="flex:1;min-width:140px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:14px">
+          <div style="font-size:11px;color:var(--color-text-secondary);margin-bottom:4px">Seller</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+            <div style="width:28px;height:28px;border-radius:50%;background:#E6F1FB;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#185FA5">SO</div>
+            <div style="font-size:13px;font-weight:500;color:var(--color-text-primary)">Sam O.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn-primary" style="padding:9px 18px;font-size:13px"><i class="ti ti-check" aria-hidden="true"></i> Release funds</button>
+        <button class="btn-ghost" style="padding:8px 14px;font-size:13px"><i class="ti ti-message" aria-hidden="true"></i> Message seller</button>
+        <button style="padding:8px 14px;font-size:13px;background:transparent;border:0.5px solid var(--color-border-tertiary);border-radius:8px;cursor:pointer;color:#A32D2D">Raise dispute</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><i class="ti ti-shield-lock" aria-hidden="true"></i> Bank-grade encryption</div>
+  <div class="trust-item"><i class="ti ti-world" aria-hidden="true"></i> 190+ countries supported</div>
+  <div class="trust-item"><i class="ti ti-clock" aria-hidden="true"></i> Funds released in 24hrs</div>
+  <div class="trust-item"><i class="ti ti-headset" aria-hidden="true"></i> 24/7 dispute resolution</div>
+</div>
+
+<section class="how-section">
+  <div class="section-label">How it works</div>
+  <div class="section-title">Simple. Safe. Every time.</div>
+  <p class="section-sub">NXRO's escrow engine protects both sides of every transaction in four clear steps.</p>
+  <div class="escrow-flow">
+    <div class="flow-step">
+      <div class="flow-circle active"><i class="ti ti-file-description" aria-hidden="true"></i></div>
+      <div class="flow-label">Create order</div>
+      <div class="flow-sub">Buyer sets terms, price, and deadline</div>
+    </div>
+    <div class="flow-arrow"><i class="ti ti-chevron-right" aria-hidden="true"></i></div>
+    <div class="flow-step">
+      <div class="flow-circle active"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <div class="flow-label">Fund escrow</div>
+      <div class="flow-sub">Payment locked safely in NXRO vault</div>
+    </div>
+    <div class="flow-arrow"><i class="ti ti-chevron-right" aria-hidden="true"></i></div>
+    <div class="flow-step">
+      <div class="flow-circle muted"><i class="ti ti-hammer" aria-hidden="true"></i></div>
+      <div class="flow-label">Work happens</div>
+      <div class="flow-sub">Seller delivers. Both parties communicate</div>
+    </div>
+    <div class="flow-arrow"><i class="ti ti-chevron-right" aria-hidden="true"></i></div>
+    <div class="flow-step">
+      <div class="flow-circle muted"><i class="ti ti-circle-check" aria-hidden="true"></i></div>
+      <div class="flow-label">Release funds</div>
+      <div class="flow-sub">Buyer approves, seller gets paid instantly</div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="features-inner">
+    <div class="section-label">Features</div>
+    <div class="section-title">Everything you need to trade safely</div>
+    <p class="section-sub">Built for freelancers, businesses, and marketplace operators worldwide.</p>
+    <div class="features-grid">
+      <div class="feat">
+        <div class="feat-icon"><i class="ti ti-lock-bolt" aria-hidden="true"></i></div>
+        <h3>Escrow protection</h3>
+        <p>Funds are held securely until delivery is confirmed — no chargebacks, no disputes left unresolved.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><i class="ti ti-message-dots" aria-hidden="true"></i></div>
+        <h3>In-order messaging</h3>
+        <p>Built-in encrypted chat per order keeps all communication tied to the transaction — no lost threads.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><i class="ti ti-activity" aria-hidden="true"></i></div>
+        <h3>Real-time order tracking</h3>
+        <p>Live status updates from Pending to Completed — both parties always know exactly where things stand.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><i class="ti ti-scale" aria-hidden="true"></i></div>
+        <h3>Dispute resolution</h3>
+        <p>Flag any order for admin review. Our team mediates and makes a fair ruling within 48 hours.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><i class="ti ti-wallet" aria-hidden="true"></i></div>
+        <h3>Multi-currency wallet</h3>
+        <p>Hold, send, and receive in multiple currencies. Withdraw to your local bank or payment provider.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon"><i class="ti ti-users-group" aria-hidden="true"></i></div>
+        <h3>Member verification</h3>
+        <p>Verified buyer and seller profiles with trust scores built from transaction history on NXRO.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section">
+  <div class="pricing-inner">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Transparent fees. No surprises.</div>
+    <p class="section-sub">Pay only when a transaction completes. No monthly fees unless you need more.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Starter</h3>
+        <div class="amount">Free<span></span></div>
+        <p class="desc">For individuals just getting started with secure trading.</p>
+        <ul>
+          <li><i class="ti ti-check" aria-hidden="true"></i> 5 active orders at once</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> 3.5% escrow fee per order</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> In-order messaging</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Standard dispute resolution</li>
+        </ul>
+        <button class="price-btn">Get started free</button>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Most popular</div>
+        <h3>Pro</h3>
+        <div class="amount">$19<span>/month</span></div>
+        <p class="desc">For freelancers and small businesses trading regularly.</p>
+        <ul>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Unlimited active orders</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> 2% escrow fee per order</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Priority dispute resolution</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Custom order templates</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Verified badge on profile</li>
+        </ul>
+        <button class="price-btn primary">Start Pro — $19/mo</button>
+      </div>
+      <div class="price-card">
+        <h3>Business</h3>
+        <div class="amount">$79<span>/month</span></div>
+        <p class="desc">For teams, agencies, and marketplace operators at scale.</p>
+        <ul>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Everything in Pro</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> 1% escrow fee per order</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> API access & webhooks</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> Dedicated account manager</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i> White-label options</li>
+        </ul>
+        <button class="price-btn">Contact sales</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-label" style="text-align:center">Ready to start?</div>
+  <h2>Trade with confidence.<br>Start for free today.</h2>
+  <p>Join thousands of buyers and sellers who trust NXRO to protect every transaction — globally, securely, instantly.</p>
+  <button class="btn-primary" style="padding:14px 36px;font-size:15px"><i class="ti ti-arrow-right" aria-hidden="true"></i> Create your free account</button>
+</section>
+
+<footer class="footer">
+  <div class="nav-logo">
+    <div class="logo-mark">NX</div>
+    <span style="font-size:14px;font-weight:500;color:var(--color-text-secondary)">NXRO</span>
+  </div>
+  <div class="footer-links">
+    <a>Privacy</a>
+    <a>Terms</a>
+    <a>Support</a>
+    <a>API docs</a>
+  </div>
+  <p>© 2026 NXRO. All rights reserved.</p>
+</footer>
